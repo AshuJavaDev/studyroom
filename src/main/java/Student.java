@@ -1,0 +1,33 @@
+package com.example.studyroom;
+
+import jakarta.persistence.*;
+
+
+@Entity
+@Table(name = "student")
+
+public class Student {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+  private int id;
+  private String name;
+  private String subject;
+
+  public Student()  {}
+
+    public Student(String name, String subject) {
+         this.name = name;
+         this.subject = subject;
+    }
+
+    public int getId()  { return id;}
+    public String getName() { return name; }
+    public String getSubject()  { return subject; }
+    public void setName( String name) { this.name = name; }
+    public void setSubject( String subject ) { this.subject = subject; }
+
+
+
+}
