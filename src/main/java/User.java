@@ -1,32 +1,31 @@
 package com.example.studyroom;
 
-public class User   {
-    private String name;
-    private String role;
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "users")
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String subject;
 
-    public User(String name, String role, String subject, int id)   {
-        this.name = name;
+    private String username;
+    private String password;
+    private String role;
+
+    // Constructors
+    public User() {}
+
+    public User(String username, String password, String role) {
+        this.username = username;
+        this.password = password;
         this.role = role;
-        this.subject = subject;
-        this.id = id;
     }
 
-    public String getname()     {
-        return name;
-    }
-
-    public String getrole()     {
-        return role;
-    }
-
-    public String getsubject()  {
-        return subject;
-    }
-
-    public int getid()     {
-        return id;
-    }
-
+    // Getters
+    public int getId() { return id; }
+    public String getUsername() { return username; }
+    public String getPassword() { return password; }
+    public String getRole() { return role; }
 }
